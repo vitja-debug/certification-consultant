@@ -6,6 +6,7 @@
     <title>Онлайн-консультант УФПБ</title>
 
     <style>
+        /* Базові стилі сторінки */
         body {
             margin: 0;
             padding: 0;
@@ -14,26 +15,31 @@
             color: #f6d77a;
         }
 
+        /* Шапка з логотипом */
         header {
             background: #000;
-            padding: 20px 30px;
+            padding: 10px 20px;
             display: flex;
             align-items: center;
         }
 
         .header-logo img {
             height: 70px;
+            width: auto;
+            display: block;
         }
 
+        /* Заголовок сторінки */
         h1 {
             text-align: center;
-            margin-top: 60px;
+            margin: 40px 20px 10px;
             font-size: 32px;
             font-weight: bold;
             color: #f3c852;
         }
 
-        button {
+        /* Універсальний стиль "кнопки" */
+        .btn {
             background: #e6b84a;
             padding: 12px 24px;
             border-radius: 25px;
@@ -41,13 +47,21 @@
             cursor: pointer;
             font-size: 18px;
             color: #000;
-            display: block;
-            margin: 30px auto;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            margin: 25px auto;
         }
 
+        .btn-primary {
+            display: block;
+            max-width: 360px;
+        }
+
+        /* Блок з описом консультанта */
         .consult-box {
-            margin: 50px auto;
-            padding: 40px;
+            margin: 40px auto 50px;
+            padding: 40px 30px;
             max-width: 900px;
             background: rgba(255, 220, 140, 0.05);
             border: 1px solid #b9931c;
@@ -60,15 +74,21 @@
             text-align: center;
             color: #f6c85a;
             font-size: 26px;
+            margin-top: 0;
+        }
+
+        .consult-box ol {
+            padding-left: 20px;
         }
 
         .consult-box ol li {
-            margin: 12px 0;
+            margin: 10px 0;
         }
 
+        /* Футер */
         footer {
-            margin-top: 60px;
-            padding: 20px 0;
+            margin-top: 40px;
+            padding: 20px 10px;
             text-align: center;
             color: #cfcfcf;
             font-size: 13px;
@@ -76,6 +96,23 @@
 
         a {
             color: #ffd36a;
+        }
+
+        /* Невелика адаптація під мобільні */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+                margin: 30px 15px 5px;
+            }
+
+            .consult-box {
+                margin: 30px 10px 40px;
+                padding: 25px 18px;
+            }
+
+            .btn {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -88,36 +125,45 @@
     </div>
 </header>
 
-<h1>Консультант з проєктування, монтажу та обслуговування систем охоронної сигналізації</h1>
+<main>
+    <h1>Консультант з проєктування, монтажу та обслуговування систем охоронної сигналізації</h1>
 
-<button onclick="window.location.href='#consultant'">
-    Поставити запитання консультанту
-</button>
+    <!-- Кнопка прокрутки до блоку з описом -->
+    <a href="#consultant" class="btn btn-primary">
+        Поставити запитання консультанту
+    </a>
 
-<section id="consultant" class="consult-box">
-    <h2>Онлайн-консультант</h2>
+    <section id="consultant" class="consult-box">
+        <h2>Онлайн-консультант</h2>
 
-    <p>
-        Консультант працює на основі актуальних версій нормативних документів щодо проєктування,
-        монтажу та технічного обслуговування систем тривожної й охоронної сигналізації.
-        Відповіді носять інформаційний характер і допомагають краще підготуватися до
-        прийняття рішень, розроблення документації та взаємодії із замовниками.
-    </p>
+        <p>
+            Консультант працює на основі актуальних версій нормативних документів щодо проєктування,
+            монтажу та технічного обслуговування систем тривожної й охоронної сигналізації.
+            Відповіді носять інформаційний характер і допомагають краще підготуватися до
+            прийняття рішень, розроблення документації та взаємодії із замовниками.
+        </p>
 
-    <ol>
-        <li>Натисніть кнопку нижче — відкриється вікно онлайн-консультанта.</li>
-        <li>Коротко опишіть об’єкт, задачу або проблему, яка вас цікавить.</li>
-        <li>Сформулюйте запитання та дочекайтеся відповіді консультанта.</li>
-    </ol>
+        <ol>
+            <li>Натисніть кнопку нижче — відкриється вікно онлайн-консультанта.</li>
+            <li>Коротко опишіть об’єкт, задачу або проблему, яка вас цікавить.</li>
+            <li>Сформулюйте запитання та дочекайтеся відповіді консультанта.</li>
+        </ol>
 
-    <button onclick="window.location.href='https://chatgpt.com/g/g-68d19b188fd4819184762a82754ff149-poiektuvannia-montazh-obslugovuvannia-ts'">
-        Перейти до онлайн-консультанта
-    </button>
-</section>
+        <!-- Кнопка переходу до GPT, відкривається в новій вкладці -->
+        <a
+            href="https://chatgpt.com/g/g-68d19b188fd4819184762a82754ff149-poiektuvannia-montazh-obslugovuvannia-ts"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Перейти до онлайн-консультанта
+        </a>
+    </section>
+</main>
 
 <footer>
-    © Федерація професіоналів безпеки України.  
-    Інформація носить довідковий характер і не є юридичною чи проєктною документацією.
+    © Федерація професіоналів безпеки України. Інформація носить довідковий характер
+    і не є юридичною чи проєктною документацією.
 </footer>
 
 </body>
